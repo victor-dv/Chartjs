@@ -28,7 +28,7 @@
      aguaLabel.push(inputAgua.value)
      luzLabel.push(inputLuz.value)
      telefoneLabel.push(inputTel.value)
-    creatBar( nameLabel, aguaLabel, luzLabel, telefoneLabel)
+    creatBar({nome: nameLabel, agua: aguaLabel, luz: luzLabel, tel: telefoneLabel})
     
 
    
@@ -36,25 +36,25 @@
  })
 
 
- function creatBar (nameLabel, aguaLabel, luzLabel, telefoneLabel ){
+ function creatBar (data){
     myChart =  new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: nameLabel  ,
+            labels: data.nome  ,
             datasets: [
             {
               label: '# Agua',
-              data: aguaLabel,
+              data: data.agua,
               borderWidth: 1
             },
             {
                 label: '# Luz',
-                data: luzLabel,
+                data: data.luz,
                 borderWidth: 1
               },
               {
                 label: '# Telefone',
-                data: telefoneLabel,
+                data: data.tel,
                 borderWidth: 1
               }
         
